@@ -27,8 +27,9 @@ if(int(answer) == 1):
         time.sleep(1)
 
         file_input = bot.find_element(By.XPATH, '//*[@id="content"]/input')
-        
-        file_input.send_keys('C:\\Users\\User\\Desktop\\YoutubeBot\\videos\\{}'.format(str(nameofvid)))
+        simp_path = 'videos/{}'.format(str(nameofvid))
+        abs_path = os.path.abspath(simp_path)
+        file_input.send_keys(abs_path)
 
         time.sleep(7)
 
@@ -63,8 +64,10 @@ elif(int(answer) == 2):
         time.sleep(1)
 
         file_input = bot.find_element(By.XPATH, '//*[@id="content"]/input')
+        simp_path = 'videos/vid{}.mp4'.format(str(i+1))
+        abs_path = os.path.abspath(simp_path)
         
-        file_input.send_keys('C:\\Users\\User\\Desktop\\YoutubeBot\\videos\\vid{}.mp4'.format(str(i+1)))
+        file_input.send_keys(abs_path)
 
         time.sleep(7)
 
